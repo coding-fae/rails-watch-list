@@ -1,1 +1,16 @@
-<h1>How are you</h1>
+<h1>Show Page List</h1>
+<p id="notice"><%= notice %></p>
+<body style="background-color:papayawhip;">
+
+<p>
+  <strong>Name:</strong>
+  <%= @list.name %>
+</p>
+  <strong>Bookmark:</strong>
+  <% @list.bookmarks.each do |bookmark|%>
+    <p style="text-align:left"><%= bookmark.comment  %></p>
+  <% end %>
+</p>
+
+<%= link_to "Return To Source", lists_path %>
+<%= link_to 'Leave Your Mark', new_list_bookmark_path(@list) %>
