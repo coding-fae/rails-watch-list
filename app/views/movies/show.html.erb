@@ -1,0 +1,7 @@
+<h1>The Movie List</h1>
+<dl>
+  <% @movies.each do |movie| %>
+  <dt><%= link_to movie.name, movie_path(movie) %></dt>
+  <dd><%= link_to movie.overview, movie_path(movie) %></dd>
+    <% end %>
+</dl>
