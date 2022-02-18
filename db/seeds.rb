@@ -18,7 +18,7 @@ Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal masterm
 puts 'Adding List of Planets to visit 🪐'
 9.times do
   list = List.create(
-    name: Faker::Books::Dune.planet
+    name: %w[Drama Sci-fi Fantasy Action].sample
   )
 end
   puts "list was created"
