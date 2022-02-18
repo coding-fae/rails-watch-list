@@ -6,6 +6,10 @@
   <strong>Name:</strong>
   <%= @list.name %>
 </p>
+    <% if @list.photo.attached? %>
+      <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+
   <strong>Bookmark:</strong>
   <% @list.bookmarks.each do |bookmark|%>
     <p><%= bookmark.comment%></p>
