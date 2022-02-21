@@ -1,11 +1,21 @@
-<h1>The List</h1>
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+  <h1>The List</h1>
+</div>
+
+
+<div class="container">
+  <div class="row justify-content-center">
+    <% @lists.each do |list| %>
+    <%= link_to list.name, list_path(list) %></li>
     <% if list.photo.attached? %>
-      <li><%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %></li>
+      <%= cl_image_tag list.photo.key, height: 300, width: 300, crop: :fill %>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+      <div class="col-4 my-3">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        </div>
+      </div>
+  </div>
+</div>
 
 <%= link_to "Add a Planet", new_list_path %>
